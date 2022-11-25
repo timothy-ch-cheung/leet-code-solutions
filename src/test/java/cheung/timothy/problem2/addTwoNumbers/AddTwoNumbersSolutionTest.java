@@ -1,7 +1,6 @@
-package cheung.timothy.problem1.addTwoNumbers;
+package cheung.timothy.problem2.addTwoNumbers;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -11,7 +10,6 @@ import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.*;
 
 class AddTwoNumbersSolutionTest {
 
@@ -34,11 +32,11 @@ class AddTwoNumbersSolutionTest {
     @CsvSource({
             "342,465,807",
             "0,0,0",
-            "9999999,9999,89990001"
+            "9999999,9999,10009998"
 
     })
     void addition(String num1, String num2, String expected) {
         ListNode answer = solution.addTwoNumbers(createListNode(num1), createListNode(num2));
-        assertThat(answer, is(createListNode(expected)));
+        assertThat(answer, Matchers.is(createListNode(expected)));
     }
 }

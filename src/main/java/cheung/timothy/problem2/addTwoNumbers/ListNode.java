@@ -1,4 +1,4 @@
-package cheung.timothy.problem1.addTwoNumbers;
+package cheung.timothy.problem2.addTwoNumbers;
 
 import java.util.Objects;
 

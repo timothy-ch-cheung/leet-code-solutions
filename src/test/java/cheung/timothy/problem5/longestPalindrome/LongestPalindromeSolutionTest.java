@@ -27,7 +27,8 @@ class LongestPalindromeSolutionTest {
     private static Stream<Arguments> testData() {
         return Stream.of(
                 Arguments.of("babad", Arrays.asList("bab", "aba")),
-                Arguments.of("cbbd", Collections.singletonList("bb"))
+                Arguments.of("cbbd", Collections.singletonList("bb")),
+                Arguments.of("aacabdkacaa", Collections.singletonList("aca"))
         );
     }
 }

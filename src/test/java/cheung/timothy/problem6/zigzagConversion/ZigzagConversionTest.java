@@ -14,7 +14,8 @@ class ZigzagConversionTest {
     @CsvSource({
             "PAYPALISHIRING,3,PAHNAPLSIIGYIR",
             "PAYPALISHIRING,4,PINALSIGYAHRPI",
-            "A,1,A"
+            "A,1,A",
+            "AB,1,AB"
     })
     void convert(String input, int rows, String expected) {
         assertThat(solution.convert(input, rows), is(expected));

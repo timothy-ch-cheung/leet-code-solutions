@@ -16,6 +16,7 @@ class RegexMatchingTest {
             "aa, a*, true",
             "ab, .*, true",
             "abcdefgh, abc.*gh, true",
+            "abcdefghgh, abc.*gh, true",
             "abcdefgha, abc.*gh, false"
     })
     void match(String input, String regex, boolean expected) {

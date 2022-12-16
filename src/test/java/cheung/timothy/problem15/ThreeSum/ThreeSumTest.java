@@ -4,10 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -21,7 +18,7 @@ class ThreeSumTest {
 
     @ParameterizedTest
     @MethodSource("testData")
-    void reverse(int[] input, List<List<Integer>> expected) {
+    void sum(int[] input, List<List<Integer>> expected) {
         List<List<Integer>> answer = solution.threeSum(input);
         assertNotNull(answer);
         assertThat(answer.size(), is(expected.size()));
@@ -32,7 +29,7 @@ class ThreeSumTest {
 
     private static Stream<Arguments> testData() {
         return Stream.of(
-                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, -1, 2), Arrays.asList(-1, 0, 1))),
+                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, 2, -1), Arrays.asList(-1, 0, 1))),
                 Arguments.of(new int[]{0, 1, 1}, new ArrayList<Integer>()),
                 Arguments.of(new int[]{0, 0, 0}, Collections.singletonList(Arrays.asList(0, 0, 0)))
         );

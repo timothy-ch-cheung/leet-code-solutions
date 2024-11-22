@@ -29,7 +29,7 @@ class ThreeSumTest {
 
     private static Stream<Arguments> testData() {
         return Stream.of(
-                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, 2, -1), Arrays.asList(-1, 0, 1))),
+                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, -1, 2), Arrays.asList(-1, 0, 1))),
                 Arguments.of(new int[]{0, 1, 1}, new ArrayList<Integer>()),
                 Arguments.of(new int[]{0, 0, 0}, Collections.singletonList(Arrays.asList(0, 0, 0)))
         );

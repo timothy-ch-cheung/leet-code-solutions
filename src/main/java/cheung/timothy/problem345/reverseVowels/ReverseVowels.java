@@ -1,33 +1,28 @@
 package cheung.timothy.problem345.reverseVowels;
 
-import java.util.Set;
-
 public class ReverseVowels {
 
-    private static final Set<String> VOWELS = Set.of("A", "E", "I", "O", "U", "a", "e", "i", "o", "u");
+    private static final String VOWELS = "AEIOUaeiou";
 
     public String reverseVowels(String s) {
-        String[] input = s.split("");
+        char[] input = s.toCharArray();
         int left = 0;
         int right = s.length() - 1;
         while (left < right) {
-            boolean isLeftVowel = VOWELS.contains(input[left]);
-            boolean isRightVowel = VOWELS.contains(input[right]);
-            if (isLeftVowel && isRightVowel) {
-                String tmp = input[left];
-                input[left] = input[right];
-                input[right] = tmp;
-            } else if (isLeftVowel) {
-                right--;
-                continue;
-            } else if (isRightVowel) {
+            while (left < right && VOWELS.indexOf(input[left]) == -1) {
                 left++;
-                continue;
             }
+            while (left < right && VOWELS.indexOf(input[right]) == -1) {
+                right--;
+            }
+            char tmp = input[left];
+            input[left] = input[right];
+            input[right] = tmp;
+
             left++;
             right--;
         }
 
-        return String.join("", input);
+        return new String(input);
     }
 }

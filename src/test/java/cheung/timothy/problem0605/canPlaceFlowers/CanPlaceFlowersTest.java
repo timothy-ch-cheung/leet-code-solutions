@@ -1,4 +1,4 @@
-package cheung.timothy.problem605.canPlaceFlowers;
+package cheung.timothy.problem0605.canPlaceFlowers;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

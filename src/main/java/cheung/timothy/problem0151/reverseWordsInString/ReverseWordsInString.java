@@ -1,4 +1,4 @@
-package cheung.timothy.problem151.reverseWordsInString;
+package cheung.timothy.problem0151.reverseWordsInString;
 
 public class ReverseWordsInString {
 

@@ -1,4 +1,4 @@
-package cheung.timothy.problem605.canPlaceFlowers;
+package cheung.timothy.problem0605.canPlaceFlowers;
 
 public class CanPlaceFlowers {
 

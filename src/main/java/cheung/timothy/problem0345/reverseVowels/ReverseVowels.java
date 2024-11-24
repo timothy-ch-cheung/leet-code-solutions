@@ -1,4 +1,4 @@
-package cheung.timothy.problem345.reverseVowels;
+package cheung.timothy.problem0345.reverseVowels;
 
 public class ReverseVowels {
 

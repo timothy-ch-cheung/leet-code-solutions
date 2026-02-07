@@ -1,4 +1,4 @@
-package cheung.timothy.problem0012;
+package cheung.timothy.problem0012.integerToRoman;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

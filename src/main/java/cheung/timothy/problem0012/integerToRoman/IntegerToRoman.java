@@ -1,4 +1,4 @@
-package cheung.timothy.problem0012;
+package cheung.timothy.problem0012.integerToRoman;
 
 public class IntegerToRoman {
 

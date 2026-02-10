@@ -1,8 +1,6 @@
 package cheung.timothy.problem0017.phoneNumberLetters;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneNumberLetters {
 
@@ -18,11 +16,17 @@ public class PhoneNumberLetters {
     );
 
     public List<String> letterCombinations(String digits) {
-        List<String> combos = new ArrayList<>();
+        Map<Integer, List<String>> combos = new HashMap();
+        combos.put(0, Collections.singletonList(""));
         for (int i = 0; i < digits.length(); i++) {
-            for (String s: numberToCharacters.get(digits.charAt(i))) {
-
+            List<String> newLayer = new ArrayList<>();
+            for (String prefix: combos.get(i)) {
+                for (String s: numberToCharacters.get(digits.charAt(i))) {
+                    newLayer.add(prefix + s);
+                }
             }
+            combos.put(i+1, newLayer);
         }
+        return combos.get(digits.length());
     }
 }

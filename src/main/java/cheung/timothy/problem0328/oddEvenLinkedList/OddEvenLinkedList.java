@@ -1,5 +1,7 @@
 package cheung.timothy.problem0328.oddEvenLinkedList;
 
+import cheung.timothy.structure.ListNode;
+
 // in: 1 -> 2 -> 3 out: 1 -> 3 -> 2
 // head = 1
 public class OddEvenLinkedList {

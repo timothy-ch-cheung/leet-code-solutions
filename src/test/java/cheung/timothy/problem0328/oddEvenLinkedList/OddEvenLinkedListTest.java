@@ -1,5 +1,6 @@
 package cheung.timothy.problem0328.oddEvenLinkedList;
 
+import cheung.timothy.structure.ListNode;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;

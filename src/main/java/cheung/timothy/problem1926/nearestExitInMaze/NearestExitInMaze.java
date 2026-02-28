@@ -21,7 +21,7 @@ public class NearestExitInMaze {
         Queue<Coord> queue = new LinkedList<>();
 
         Coord entryCoord = new Coord(entrance[0], entrance[1]);
-
+        return 0;
     }
 
     private boolean isExit(Coord coord, Coord entrance) {

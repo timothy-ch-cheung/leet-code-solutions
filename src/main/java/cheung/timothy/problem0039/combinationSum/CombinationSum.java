@@ -10,24 +10,23 @@ public class CombinationSum {
         List<ResultCandidate> resultCandidates = new ArrayList<>();
         resultCandidates.add(new ResultCandidate(new ArrayList<>(), 0));
 
-        int candidatesOffset = 0;
         while (!resultCandidates.isEmpty()) {
             List<ResultCandidate> newCandidates = new ArrayList<>();
-            for (int i = candidatesOffset; i < candidates.length; i++) {
-                boolean candidateUsed = false;
-                for (ResultCandidate resultCandidate: resultCandidates) {
+            for (int i = 0; i < candidates.length; i++) {
+                for (ResultCandidate resultCandidate : resultCandidates) {
                     int sum = resultCandidate.total + candidates[i];
-                    if (resultCandidate.total == target) {
-                        result.add(resultCandidate.solutionCandidate);
-                    } else if (sum <= target && (resultCandidate.solutionCandidate.isEmpty() || resultCandidate.solutionCandidate.get(resultCandidate.solutionCandidate.size()-1) <= candidates[i])) {
-                        List<Integer> validCandidate = new ArrayList<>(resultCandidate.solutionCandidate);
+                    List<Integer> solutionCandidate = resultCandidate.solutionCandidate;
+                    if (sum <= target && (solutionCandidate.isEmpty() || solutionCandidate.get(solutionCandidate.size() - 1) <= candidates[i])) {
+                        List<Integer> validCandidate = new ArrayList<>(solutionCandidate);
                         validCandidate.add(candidates[i]);
-                        newCandidates.add(new ResultCandidate(validCandidate ,sum));
-                        candidateUsed = true;
+                        newCandidates.add(new ResultCandidate(validCandidate, sum));
                     }
                 }
-                if (!candidateUsed) {
-                    candidatesOffset++;
+
+            }
+            for (ResultCandidate resultCandidate : resultCandidates) {
+                if (resultCandidate.total == target) {
+                    result.add(resultCandidate.solutionCandidate);
                 }
             }
             resultCandidates = newCandidates;
@@ -36,5 +35,6 @@ public class CombinationSum {
         return result;
     }
 
-    private record ResultCandidate(List<Integer> solutionCandidate, Integer total){}
+    private record ResultCandidate(List<Integer> solutionCandidate, Integer total) {
+    }
 }
